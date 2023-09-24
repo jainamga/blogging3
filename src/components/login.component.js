@@ -6,6 +6,8 @@ import CheckButton from "react-validation/build/button";
 import AuthService from "../services/auth.service2";
 
 import { withRouter } from '../common/with-router';
+import { isLoggedIn } from "../auth";
+import Base from '../components/Base';
 
 const required = value => {
   if (!value) {
@@ -56,9 +58,12 @@ class Login extends Component {
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
-        () => {
-          this.props.router.navigate("/profile");
-          window.location.reload();
+        (resp) => {
+          console.log(resp);
+          localStorage.setItem("data",JSON.stringify("data"));
+
+           this.props.router.navigate("/NewFeed");
+           window.location.reload();
         },
         error => {
           const resMessage =
@@ -83,12 +88,17 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="col-md-12">
-        <div className="card card-container">
+      <>
+      <Base/>
+      <div className="col-md-12 d-flex justify-content-center align-items-center vh-100">
+        
+        <div className="card card-container p-4">
+          
           <img
+            className="profile-img-card mx-auto"
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
-            className="profile-img-card"
+            style={{ width: '100px', height: '100px' }}
           />
 
           <Form
@@ -121,7 +131,7 @@ class Login extends Component {
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group text-center">
               <button
                 className="btn btn-primary btn-block"
                 disabled={this.state.loading}
@@ -149,6 +159,7 @@ class Login extends Component {
           </Form>
         </div>
       </div>
+      </>
     );
   }
 }

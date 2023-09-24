@@ -44,7 +44,7 @@ const handleSubmit =(event)=>
   // axios.get('https://login-production-e2c3.up.railway.app/api/posts').then((resps)=>{
     // console.log(resps)})
   toast.success("User has signed up")
-  navigate("/user/dashboard")
+  // navigate("/user/dashboard")
 
 
 
