@@ -29,9 +29,9 @@ content:'',
 
 })
 
-const API_URL2 = 'http://localhost:8087/api/user/${userId}/category/1/posts';
+const API_URL2 = 'https://login2-production.up.railway.app/api/user/${userId}/category/1/posts';
 
-const API_URL3 = 'http://localhost:8087/api/con/';
+const API_URL3 = 'https://login2-production.up.railway.app/api/con/';
 
   useEffect(() => {
     axios.get(API_URL3 , { headers: authHeader() })

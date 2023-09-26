@@ -13,7 +13,7 @@ function NewFeed() {
     const[arrayLength,setarrayLength] = useState(null);
     const [isLoading, setLoading] = useState(true);
 
-    const API_URL2 = 'http://localhost:8087/api/posts';
+    const API_URL2 = 'https://login2-production.up.railway.app/api/posts';
 
   useEffect(() => {
     console.log('0hello')

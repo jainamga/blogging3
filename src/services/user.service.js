@@ -1,9 +1,9 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'http://localhost:8087/api/test/';
+const API_URL = 'https://login2-production.up.railway.app/api/test/';
 
-const API_URL2 = 'http://localhost:8087/home/';
+const API_URL2 = 'https://login2-production.up.railway.app/home/';
 
 
 
