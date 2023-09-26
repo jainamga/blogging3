@@ -26,7 +26,7 @@ function App() {
    <ToastContainer position='bottom-center'/>
    <Routes>
    <Route path='/blogging' element={<LoginComponent/> }/>
-    <Route path='/home' element={<Home/> }/> 
+    <Route path='/home' element={<LoginComponent/> }/> 
     <Route path='/login' element={<LoginComponent/> }/>
     <Route path='/signup' element={<Signup/> }/>
     <Route path='/test3' element={<CardComponent/>}/>
